@@ -21,22 +21,22 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  a {
+    text-decoration: none;
+  }
   h1 {
     font-size: 2.6rem;
     font-weight: 500;
     margin: 0;
     text-align: center;
   }
-  .pagination {
-    margin-bottom: 2rem;
-    padding: 2rem;
-    text-align: center;
-  }
   .btn {
-    background-color: #5bc0de;
+    background-color: #4E3540;
     border: none;
     border-radius: 0.4rem;
+    color: #fff;
     cursor: pointer;
+    display: inline-block;
     font-family: inherit;
     font-size: 1.6rem;
     text-align: center;
@@ -46,6 +46,14 @@ export const GlobalStyles = createGlobalStyle`
     }
     &:first-child {
       margin-right: 2rem;
+    }
+    &--secondary {
+      background-color: #c63e12;
+      color: #fff;
+    }
+    &--block {
+      display: block;
+      width: 100%;
     }
   }
 `;

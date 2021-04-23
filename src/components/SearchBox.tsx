@@ -54,6 +54,8 @@ function SearchBox() {
 
 	const { searchImages, initElementRef } = useContext(ImageContext);
 
+	const elementRef = useRef<HTMLFormElement>(null!);
+
 	const disableButton = () => query.length < 3;
 
 	const handleSearch = (e: FormEvent) => {
@@ -64,8 +66,6 @@ function SearchBox() {
 		setQuery('');
 	};
 
-	const elementRef = useRef<HTMLFormElement>(null!);
-
 	useEffect(() => {
 		initElementRef(elementRef.current);
 	}, [initElementRef]);
@@ -73,6 +73,7 @@ function SearchBox() {
 	return (
 		<SearchBoxStyled onSubmit={handleSearch} ref={elementRef}>
 			<input
+				aria-label="Enter a keyword for search images"
 				type="text"
 				value={query}
 				onChange={({ target }) => setQuery(target.value)}
